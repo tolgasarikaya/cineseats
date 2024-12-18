@@ -16,14 +16,14 @@ export default function Header() {
   return (
     <ScrollHeader>
       {/* mobile view */}
-      <div className="font-heading p-6 flex flex-row justify-between items-center lg:hidden">
+      <div className="font-heading h-[10vh] max-h-[60px] min-h-[40px] px-6 flex flex-row justify-between items-center lg:hidden">
         <Icons.Bars />
         {logo}
         <Icons.Search />
       </div>
 
       {/* desktop view */}
-      <div className="font-heading py-6 px-28 hidden justify-between items-center text-lg font-semibold lg:flex flex-row">
+      <div className="font-heading h-[10vh] px-28 hidden justify-between items-center text-lg font-semibold lg:flex flex-row">
         {logo}
         <Link href="/movies" className="hover:text-gray-300 transition-colors">
           Movies

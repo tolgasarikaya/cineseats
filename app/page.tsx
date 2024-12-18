@@ -1,7 +1,9 @@
+import ImageSlider from "@/components/image-slider/image-slider";
+
 export default function Home() {
   return (
-    <div className="h-[120vh]">
-      <p>Home</p>
+    <div>
+      <ImageSlider />
     </div>
   );
 }

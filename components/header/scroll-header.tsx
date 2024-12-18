@@ -24,7 +24,7 @@ export default function ScrollHeader({
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 transition-colors duration-300 ${
+      className={`sticky lg:fixed top-0 left-0 right-0 transition-colors duration-300 z-50 ${
         isScrolled ? "bg-[#1e1e1e]" : "bg-transparent"
       }`}
     >
