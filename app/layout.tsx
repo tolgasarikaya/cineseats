@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Space_Grotesk, Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 
 import "./globals.css";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "CineSeats",
@@ -31,8 +33,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${spaceGrotesk.variable} ${poppins.variable} font-sans bg-black min-h-screen relative text-white antialiased`}
       >
+        <Toaster />
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
