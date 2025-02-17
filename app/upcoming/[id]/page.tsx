@@ -1,11 +1,11 @@
 import MovieDetail from "@/components/movie-detail/movie-detail";
 
-interface MovieDetailPageProps {
+type Props = {
   params: {
     id: string;
   };
-}
+};
 
-export default function MovieDetailPage({ params }: MovieDetailPageProps) {
+export default function MovieDetailPage({ params }: Props) {
   return <MovieDetail movieId={params.id} type="upcoming" />;
 }
