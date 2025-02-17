@@ -1,11 +1,10 @@
 import MovieDetail from "@/components/movie-detail/movie-detail";
 
-type Props = {
-  params: {
-    id: string;
-  };
+type PageProps = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function MovieDetailPage({ params }: Props) {
+export default async function MovieDetailPage({ params }: PageProps) {
   return <MovieDetail movieId={params.id} type="upcoming" />;
 }
