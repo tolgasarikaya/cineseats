@@ -5,16 +5,13 @@ import { NotifyButton } from "../buttons/notify-button";
 import { BsTicketPerforated } from "react-icons/bs";
 
 interface MovieDetailProps {
-  params: { id: string };
-  type?: "upcoming" | "current";
+  movieId: string;
+  type: "current" | "upcoming";
 }
 
-export default async function MovieDetail({
-  params,
-  type = "current",
-}: MovieDetailProps) {
+export default async function MovieDetail({ movieId, type }: MovieDetailProps) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${params.id}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${movieId}`
   );
   const movie: MovieDetails = await response.json();
 
