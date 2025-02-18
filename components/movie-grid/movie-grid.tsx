@@ -13,12 +13,12 @@ const pageConfig = {
   "now-playing": {
     title: "Now Playing",
     endpoint: "now-playing-movies",
-    detailsLink: (id: string) => `/movies/${id}`,
+    detailsLink: (id: number) => `/movies/${id}`,
   },
   upcoming: {
     title: "Coming Soon",
     endpoint: "upcoming-movies",
-    detailsLink: (id: string) => `/upcoming/${id}`,
+    detailsLink: (id: number) => `/upcoming/${id}`,
   },
 };
 
