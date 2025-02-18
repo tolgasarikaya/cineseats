@@ -9,7 +9,9 @@ export default async function TicketBooking({
 }) {
   const { movieId } = await params;
 
-  const response = await fetch(`/api/get-movie?id=${movieId}`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${movieId}`
+  );
   const movie: MovieDetails = await response.json();
 
   return (
