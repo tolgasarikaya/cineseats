@@ -11,7 +11,7 @@ interface MovieDetailProps {
 
 export default async function MovieDetail({ movieId, type }: MovieDetailProps) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${movieId}`
+    `${process.env.BASE_URL}/api/get-movie?id=${movieId}`
   );
   const movie: MovieDetails = await response.json();
 

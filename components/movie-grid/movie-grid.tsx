@@ -25,7 +25,7 @@ const pageConfig = {
 export default async function MovieGrid({ type }: MovieGridPageProps) {
   const config = pageConfig[type];
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/${config.endpoint}`
+    `${process.env.BASE_URL}/api/${config.endpoint}`
   );
   const movies: Movie[] = await response.json();
 

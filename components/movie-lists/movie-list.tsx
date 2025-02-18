@@ -14,7 +14,7 @@ const MovieList = async ({ type }: MovieListProps) => {
   const endpoint =
     type === "now-playing" ? "now-playing-movies" : "upcoming-movies";
   const movieData = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/${endpoint}`
+    `${process.env.BASE_URL}/api/${endpoint}`
   );
   const movies: Movie[] = await movieData.json();
 
