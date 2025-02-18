@@ -5,10 +5,12 @@ import { BookingSteps } from "@/components/tickets/booking-steps";
 export default async function TicketBooking({
   params,
 }: {
-  params: { movieId: string };
+  params: Promise<{ movieId: string }>;
 }) {
+  const { movieId } = await params;
+
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${params.movieId}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-movie?id=${movieId}`
   );
   const movie: MovieDetails = await response.json();
 
@@ -32,7 +34,7 @@ export default async function TicketBooking({
           </div>
         </div>
 
-        <BookingSteps movieId={params.movieId} />
+        <BookingSteps movieId={movieId} />
       </div>
     </div>
   );
